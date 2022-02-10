@@ -1,5 +1,6 @@
 build
 .vs
+CMakeSettings.json
 CMakeLists.txt.user*
 CMakeFiles
 CMakeCache.txt
