@@ -28,10 +28,18 @@ elseif (MSVC)
     add_definitions(-D_USE_MATH_DEFINES -DNOMINMAX)
 endif()
 
-set(CMAKE_BINARY_DIR ${CMAKE_SOURCE_DIR}/build)
+if(${CMAKE_BUILD_TYPE} MATCHES Debug)
+set(CMAKE_BINARY_DIR ${CMAKE_SOURCE_DIR}/build/Debug)
+elseif(${CMAKE_BUILD_TYPE} MATCHES Release)
+set(CMAKE_BINARY_DIR ${CMAKE_SOURCE_DIR}/build/Release)
+elseif(${CMAKE_BUILD_TYPE} MATCHES RelWithDebInfo)
+set(CMAKE_BINARY_DIR ${CMAKE_SOURCE_DIR}/build/RelWithDebInfo)
+endif()
+
 set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR})
 set(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR})
 
+set(OpenCV_DIR "C:/opencv-4.5.5_and_opencv_contrib-4.5.5/opencv_lib")
 FIND_PACKAGE(OpenCV REQUIRED)
 
 option(SILENT_WORK "Remove all imshow and waitKey functions?" OFF)
