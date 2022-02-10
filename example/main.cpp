@@ -23,7 +23,7 @@ static void Help()
 
 const char* keys =
 {
-    "{ @1               |../data/atrium.avi  | movie file | }"
+    "{ @1               |../../data/atrium.avi  | movie file | }"
     "{ e  example       |1                   | number of example 0 - MouseTracking, 1 - MotionDetector, 2 - FaceDetector, 3 - PedestrianDetector, 4 - OpenCV dnn objects detector, 5 - YOLO Darknet detector, 6 - YOLO TensorRT Detector, 7 - Cars counting | }"
     "{ sf start_frame   |0                   | Start a video from this position | }"
     "{ ef end_frame     |0                   | Play a video to this position (if 0 then played to the end of file) | }"
