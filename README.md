@@ -115,14 +115,15 @@ Also you can read [Wiki in Russian](https://github.com/Smorodov/Multitarget-trac
 #### Build
 1. Download project sources
 2. Install CMake
-3. Install OpenCV (https://github.com/opencv/opencv) and OpenCV contrib (https://github.com/opencv/opencv_contrib) repositories
-4. Configure project CmakeLists.txt, set OpenCV_DIR (-DOpenCV_DIR=/path/to/opencv/build).
-5. If opencv_contrib don't installed then disable options USE_OCV_BGFG=OFF, USE_OCV_KCF=OFF and USE_OCV_UKF=OFF
-6. If you want to use native darknet YOLO detector with CUDA + cuDNN then set BUILD_YOLO_LIB=ON  (Install first CUDA and cuDNN libraries from Nvidia)
-7. If you want to use YOLO detector with TensorRT then set BUILD_YOLO_TENSORRT=ON (Install first TensorRT library from Nvidia)
-8. For building example with low fps detector (now native darknet YOLO detector) and Tracker worked on each frame: BUILD_ASYNC_DETECTOR=ON
-9. For building example with line crossing detection (cars counting): BUILD_CARS_COUNTING=ON
-10. Go to the build directory and run make
+3. Install OpenCV (https://github.com/opencv/opencv) and OpenCV contrib (https://github.com/opencv/opencv_contrib) repositories. [Istallation CMake, OpenCV and OpenCV contrib together](https://www.youtube.com/watch?v=v_76zetw950)
+4. Add in Multitarget-tracker\CMakeLists.txt set(OpenCV_DIR "path_to_opencv_build") and configure project CmakeLists.txt
+5. It may be necessary to add lol in missing places namely in the Multitarget-tracker\src\Detector\CMakeLists, Multitarget-tracker\src\Tracker\CMakeLists.txt, ultitarget-tracker\src\Detector\CMakeLists.txt
+6. If opencv_contrib don't installed then disable options USE_OCV_BGFG=OFF, USE_OCV_KCF=OFF and USE_OCV_UKF=OFF
+7. If you want to use native darknet YOLO detector with CUDA + cuDNN then set BUILD_YOLO_LIB=ON  (Install first CUDA and cuDNN libraries from Nvidia)
+8. If you want to use YOLO detector with TensorRT then set BUILD_YOLO_TENSORRT=ON (Install first TensorRT library from Nvidia)
+9. For building example with low fps detector (now native darknet YOLO detector) and Tracker worked on each frame: BUILD_ASYNC_DETECTOR=ON
+10. For building example with line crossing detection (cars counting): BUILD_CARS_COUNTING=ON
+11. Go to the build directory and run make
 
 **Full build:**
 
