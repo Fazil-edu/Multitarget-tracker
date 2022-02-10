@@ -117,7 +117,7 @@ Also you can read [Wiki in Russian](https://github.com/Smorodov/Multitarget-trac
 2. Install CMake
 3. Install OpenCV (https://github.com/opencv/opencv) and OpenCV contrib (https://github.com/opencv/opencv_contrib) repositories. [Istallation CMake, OpenCV and OpenCV contrib together](https://www.youtube.com/watch?v=v_76zetw950)
 4. Add in Multitarget-tracker\CMakeLists.txt set(OpenCV_DIR "path_to_opencv_build") and configure project CmakeLists.txt
-5. It may be necessary to add lol in missing places namely in the Multitarget-tracker\src\Detector\CMakeLists, Multitarget-tracker\src\Tracker\CMakeLists.txt, ultitarget-tracker\src\Detector\CMakeLists.txt
+5. It may be necessary to add ARCHIVE DESTINATION ${CMAKE_INSTALL_PREFIX}/lib in missing places namely in the Multitarget-tracker\src\Detector\CMakeLists, Multitarget-tracker\src\Tracker\CMakeLists.txt, ultitarget-tracker\src\Detector\CMakeLists.txt
 6. If opencv_contrib don't installed then disable options USE_OCV_BGFG=OFF, USE_OCV_KCF=OFF and USE_OCV_UKF=OFF
 7. If you want to use native darknet YOLO detector with CUDA + cuDNN then set BUILD_YOLO_LIB=ON  (Install first CUDA and cuDNN libraries from Nvidia)
 8. If you want to use YOLO detector with TensorRT then set BUILD_YOLO_TENSORRT=ON (Install first TensorRT library from Nvidia)
